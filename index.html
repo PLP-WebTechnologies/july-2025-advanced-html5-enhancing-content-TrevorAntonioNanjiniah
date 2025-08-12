@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Multi‑Section Demo: Lists, Tables, Media & Form</title>
+  <meta name="description" content="A simple, accessible HTML5 page demonstrating lists, tables, media and a complete form using native HTML5 validation.">
+  <style>
+    /* Minimal styling to keep structure clear and readable */
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; line-height:1.5; margin:0; padding:1rem; color:#111}
+    header, footer{background:#f5f7fb; padding:1rem; border-radius:6px}
+    main{max-width:900px; margin:1rem auto}
+    nav ul{display:flex; gap:1rem; list-style:none; padding:0}
+    section{margin:1.25rem 0; padding:1rem; border:1px solid #eee; border-radius:8px}
+    table{width:100%; border-collapse:collapse; margin-top:.5rem}
+    th, td{padding:.5rem; border:1px solid #ddd; text-align:left}
+    .media{display:flex; gap:1rem; flex-wrap:wrap}
+    img, video{max-width:100%; height:auto; border-radius:6px}
+    form label{display:block; font-weight:600; margin-bottom:.25rem}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+    fieldset{margin:0; padding:1rem; border:1px solid #ddd; border-radius:6px}
+    legend{font-weight:700}
+    .hint{font-size:.9rem; color:#555}
+    .actions{display:flex; gap:.5rem; margin-top:.75rem}
+    button{padding:.6rem 1rem; border-radius:6px; border:1px solid #2b6cb0; background:#2b6cb0; color:white}
+    @media (max-width:640px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Demo: Structured Page with Lists, Tables, Media & an Accessible HTML5 Form</h1>
+    <p class="hint">Clean semantic structure, accessibility-friendly labels & native HTML5 validation (no JavaScript).</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#signup">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>This short section shows unordered and ordered lists to present content clearly.</p>
+      <h3>Benefits</h3>
+      <ul>
+        <li>Semantic HTML for structure and accessibility.</li>
+        <li>Native form validation with clear labels and hints.</li>
+        <li>Media elements (images, video/audio) included with fallbacks.</li>
+      </ul>
+
+      <h3>Steps to get started</h3>
+      <ol>
+        <li>Read the required fields and hints.</li>
+        <li>Complete the form using appropriate input types.</li>
+        <li>Use the browser's validation messages to correct errors.</li>
+      </ol>
+    </section>
+
+    <section id="features">
+      <h2>Feature Comparison (Table)</h2>
+      <p>Simple table demonstrating tabular data.</p>
+      <table summary="Comparison of three hosting plans and their included features">
+        <caption>Hosting Plan Features</caption>
+        <thead>
+          <tr>
+            <th scope="col">Feature</th>
+            <th scope="col">Basic</th>
+            <th scope="col">Standard</th>
+            <th scope="col">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Storage</th>
+            <td>5 GB</td>
+            <td>50 GB</td>
+            <td>200 GB</td>
+          </tr>
+          <tr>
+            <th scope="row">Bandwidth / month</th>
+            <td>10 GB</td>
+            <td>Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <th scope="row">Daily Backups</th>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <th scope="row">Support</th>
+            <td>Email</td>
+            <td>Email & Chat</td>
+            <td>24/7 Phone</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="media">
+      <h2>Media Examples</h2>
+      <div class="media">
+        <figure style="flex:1 1 320px">
+          <img src="https://via.placeholder.com/640x360.png?text=Placeholder+Image" alt="Placeholder example image showing a sample layout">
+          <figcaption class="hint">Example image with descriptive alt text.</figcaption>
+        </figure>
+
+        <figure style="flex:1 1 320px">
+          <video controls width="640">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
+          <figcaption class="hint">Autoplay disabled; user controls are provided for accessibility.</figcaption>
+        </figure>
+
+        <figure style="flex:1 1 320px">
+          <audio controls>
+            <source src="https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <figcaption class="hint">Audio element with fallback text.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="signup">
+      <h2>Sign Up Form</h2>
+      <p>All validation uses native HTML5 attributes. Each input has an associated label and helpful hint where needed.</p>
+
+      <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div class="row">
+            <div>
+              <label for="firstName">First name</label>
+              <input id="firstName" name="firstName" type="text" required minlength="2" maxlength="40" placeholder="Jane" aria-describedby="firstNameHelp">
+              <small id="firstNameHelp" class="hint">Required — 2 to 40 characters.</small>
+            </div>
+
+            <div>
+              <label for="lastName">Last name</label>
+              <input id="lastName" name="lastName" type="text" required minlength="2" maxlength="40" placeholder="Doe">
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:.75rem">
+            <div>
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" aria-describedby="emailHelp">
+              <small id="emailHelp" class="hint">We'll use this to contact you. Must be a valid email format.</small>
+            </div>
+
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" pattern="^\+?\d{7,15}$" placeholder="+254712345678" aria-describedby="phoneHelp">
+              <small id="phoneHelp" class="hint">Optional — digits only, 7 to 15 characters (you may include a leading +).</small>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset style="margin-top:1rem">
+          <legend>Account Details</legend>
+          <div>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" required pattern="^[A-Za-z0-9_.-]{3,20}$" title="3–20 characters: letters, numbers, underscore, dot or hyphen" placeholder="janedoe">
+            <small class="hint">3–20 chars; letters, numbers, underscore, dot or hyphen.</small>
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required minlength="8" pattern="(?=.*\\d)(?=.*[A-Za-z]).{8,}" title="Minimum 8 characters, at least one letter and one number">
+            <small class="hint">Minimum 8 characters, with at least one letter and one number.</small>
+          </div>
+        </fieldset>
+
+        <fieldset style="margin-top:1rem">
+          <legend>Preferences & Details</legend>
+
+          <div class="row">
+            <div>
+              <label for="birthdate">Date of birth</label>
+              <input id="birthdate" name="birthdate" type="date" required aria-describedby="dobHelp">
+              <small id="dobHelp" class="hint">Use the browser date picker.</small>
+            </div>
+
+            <div>
+              <label for="color">Favorite color</label>
+              <input id="color" name="color" type="color" value="#2b6cb0">
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:.75rem">
+            <div>
+              <label for="visits">Number of visits (this year)</label>
+              <input id="visits" name="visits" type="number" min="0" max="999" step="1" value="0">
+            </div>
+
+            <div>
+              <label for="satisfaction">Satisfaction (1–10)</label>
+              <input id="satisfaction" name="satisfaction" type="range" min="1" max="10" step="1" value="7" aria-valuemin="1" aria-valuemax="10">
+            </div>
+          </div>
+
+          <div style="margin-top:.75rem">
+            <p style="margin:0 0 .35rem 0; font-weight:600">Contact preference</p>
+            <label><input type="radio" name="contact" value="email" checked> Email</label>
+            <label><input type="radio" name="contact" value="phone"> Phone</label>
+            <label><input type="radio" name="contact" value="none"> No contact</label>
+          </div>
+
+          <div style="margin-top:.5rem">
+            <p style="margin:0 0 .35rem 0; font-weight:600">Interests</p>
+            <label><input type="checkbox" name="interests" value="news"> Newsletters</label>
+            <label><input type="checkbox" name="interests" value="events"> Events</label>
+            <label><input type="checkbox" name="interests" value="offers"> Special offers</label>
+          </div>
+        </fieldset>
+
+        <fieldset style="margin-top:1rem">
+          <legend>Additional information & Files</legend>
+          <div>
+            <label for="bio">Short bio</label>
+            <textarea id="bio" name="bio" rows="4" minlength="10" maxlength="500" placeholder="Tell us a little about yourself..."></textarea>
+          </div>
+
+          <div style="margin-top:.5rem">
+            <label for="avatar">Upload avatar (optional)</label>
+            <input id="avatar" name="avatar" type="file" accept="image/*">
+            <small class="hint">Accepts images only (jpg, png, etc.).</small>
+          </div>
+        </fieldset>
+
+        <fieldset style="margin-top:1rem">
+          <legend>Terms</legend>
+          <label for="terms"><input id="terms" name="terms" type="checkbox" required> I accept the <a href="#">terms and conditions</a>.</label>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Submit</button>
+          <button type="reset" style="background:#eee; color:#111; border:1px solid #ccc">Reset</button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Created as an HTML5 accessibility demonstration — no JavaScript used for validation.</p>
+  </footer>
+</body>
+</html>
